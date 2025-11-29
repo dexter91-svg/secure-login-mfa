@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import PageTitle from '../components/PageTitle';
 
 const Modal = ({ isOpen, onClose, title, children }) => {
     if (!isOpen) return null;
@@ -60,7 +61,7 @@ const Landing = () => {
 
     return (
         <div className="min-h-screen bg-[#020617] text-white overflow-x-hidden font-sans selection:bg-cyan-500/30">
-
+            <PageTitle title="Home" />
             <AnimatePresence>
                 {activeModal === 'privacy' && (
                     <Modal isOpen={true} onClose={closeModal} title="Privacy Policy">

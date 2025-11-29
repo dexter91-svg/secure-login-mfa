@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import api from '../services/api';
+import PageTitle from '../components/PageTitle';
 
 const OTPVerify = () => {
     const [otp, setOtp] = useState('');
@@ -59,6 +60,7 @@ const OTPVerify = () => {
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-[#0B1120] px-4">
+            <PageTitle title="Verify OTP" />
             <div className="w-full max-w-md bg-[#0f172a] rounded-2xl border border-slate-800 shadow-2xl p-8">
                 <div className="text-center mb-8">
                     <div className="w-16 h-16 mx-auto mb-4 bg-cyan-500/10 rounded-full flex items-center justify-center text-cyan-400 border border-cyan-500/20">
@@ -101,8 +103,8 @@ const OTPVerify = () => {
                         onClick={handleResend}
                         disabled={timeLeft > 0}
                         className={`text-sm font-medium transition-colors ${timeLeft > 0
-                                ? 'text-slate-600 cursor-not-allowed'
-                                : 'text-cyan-400 hover:text-cyan-300'
+                            ? 'text-slate-600 cursor-not-allowed'
+                            : 'text-cyan-400 hover:text-cyan-300'
                             }`}
                     >
                         Resend Verification Code

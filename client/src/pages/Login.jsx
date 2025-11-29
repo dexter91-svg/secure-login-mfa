@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import api from '../services/api';
 import { motion } from 'framer-motion';
+import PageTitle from '../components/PageTitle';
 
 const Login = () => {
     const [formData, setFormData] = useState({ username: '', password: '' });
@@ -31,6 +32,7 @@ const Login = () => {
 
     return (
         <div className="min-h-screen w-full flex bg-[#0B1120] overflow-hidden font-sans">
+            <PageTitle title="Login" />
             {/* Left Side - Visual (Static & Clean) */}
             <div className="hidden lg:flex w-1/2 relative bg-[#0f172a] items-center justify-center border-r border-slate-800">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-slate-900"></div>

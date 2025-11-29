@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import api from '../services/api';
 import { motion } from 'framer-motion';
+import PageTitle from '../components/PageTitle';
 
 const DashboardUser = () => {
     const [user, setUser] = useState(null);
@@ -29,6 +30,7 @@ const DashboardUser = () => {
 
     return (
         <div className="min-h-screen bg-[#0B1120] text-white relative overflow-hidden">
+            <PageTitle title="Dashboard" />
             {/* Tech Background */}
             <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#38bdf8 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
 

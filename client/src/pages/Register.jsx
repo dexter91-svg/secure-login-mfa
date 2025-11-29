@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import validator from 'validator';
 import api from '../services/api';
+import PageTitle from '../components/PageTitle';
 
 const Register = () => {
     const [formData, setFormData] = useState({ username: '', email: '', password: '' });
@@ -92,6 +93,7 @@ const Register = () => {
 
     return (
         <div className="min-h-screen w-full flex bg-[#0B1120] overflow-hidden font-sans">
+            <PageTitle title="Register" />
             {/* Left Side - Form */}
             <div className="w-full lg:w-1/2 flex items-center justify-center p-8 bg-[#0B1120] order-1">
                 <div className="w-full max-w-md">
@@ -162,19 +164,19 @@ const Register = () => {
                                 <div className="mt-2 flex items-center gap-2">
                                     <div className="flex gap-1 flex-1">
                                         <div className={`h-1 flex-1 rounded-full transition-all duration-300 ${passwordStrength.score >= 20 ?
-                                                passwordStrength.score < 40 ? 'bg-red-500' :
-                                                    passwordStrength.score < 60 ? 'bg-orange-500' :
-                                                        passwordStrength.score < 80 ? 'bg-yellow-500' : 'bg-emerald-500'
-                                                : 'bg-slate-700'
-                                            }`}></div>
-                                        <div className={`h-1 flex-1 rounded-full transition-all duration-300 ${passwordStrength.score >= 40 ?
+                                            passwordStrength.score < 40 ? 'bg-red-500' :
                                                 passwordStrength.score < 60 ? 'bg-orange-500' :
                                                     passwordStrength.score < 80 ? 'bg-yellow-500' : 'bg-emerald-500'
-                                                : 'bg-slate-700'
+                                            : 'bg-slate-700'
+                                            }`}></div>
+                                        <div className={`h-1 flex-1 rounded-full transition-all duration-300 ${passwordStrength.score >= 40 ?
+                                            passwordStrength.score < 60 ? 'bg-orange-500' :
+                                                passwordStrength.score < 80 ? 'bg-yellow-500' : 'bg-emerald-500'
+                                            : 'bg-slate-700'
                                             }`}></div>
                                         <div className={`h-1 flex-1 rounded-full transition-all duration-300 ${passwordStrength.score >= 60 ?
-                                                passwordStrength.score < 80 ? 'bg-yellow-500' : 'bg-emerald-500'
-                                                : 'bg-slate-700'
+                                            passwordStrength.score < 80 ? 'bg-yellow-500' : 'bg-emerald-500'
+                                            : 'bg-slate-700'
                                             }`}></div>
                                         <div className={`h-1 flex-1 rounded-full transition-all duration-300 ${passwordStrength.score >= 80 ? 'bg-emerald-500' : 'bg-slate-700'
                                             }`}></div>

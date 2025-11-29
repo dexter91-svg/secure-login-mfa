@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import api from '../services/api';
 import { motion } from 'framer-motion';
+import PageTitle from '../components/PageTitle';
 
 const DashboardAdmin = () => {
     const [users, setUsers] = useState([]);
@@ -32,6 +33,7 @@ const DashboardAdmin = () => {
 
     return (
         <div className="min-h-screen bg-[#0B1120] text-white relative overflow-hidden">
+            <PageTitle title="Admin Console" />
             {/* Tech Background */}
             <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#38bdf8 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
 
@@ -89,8 +91,8 @@ const DashboardAdmin = () => {
                                         <td className="p-4 text-slate-400 font-mono text-sm">{user.email}</td>
                                         <td className="p-4">
                                             <span className={`px-2.5 py-1 rounded text-xs font-medium border ${user.role === 'admin'
-                                                    ? 'bg-red-500/10 text-red-400 border-red-500/20'
-                                                    : 'bg-blue-500/10 text-blue-400 border-blue-500/20'
+                                                ? 'bg-red-500/10 text-red-400 border-red-500/20'
+                                                : 'bg-blue-500/10 text-blue-400 border-blue-500/20'
                                                 }`}>
                                                 {user.role.toUpperCase()}
                                             </span>
@@ -138,8 +140,8 @@ const DashboardAdmin = () => {
                                         <td className="p-4 text-slate-400 font-mono text-sm">{log.ip_address}</td>
                                         <td className="p-4">
                                             <span className={`px-2.5 py-1 rounded text-xs font-medium border ${log.status === 'success'
-                                                    ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
-                                                    : 'bg-red-500/10 text-red-400 border-red-500/20'
+                                                ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
+                                                : 'bg-red-500/10 text-red-400 border-red-500/20'
                                                 }`}>
                                                 {log.status.toUpperCase()}
                                             </span>
